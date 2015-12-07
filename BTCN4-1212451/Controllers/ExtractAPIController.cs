@@ -16,7 +16,7 @@ namespace BTCN4_1212451.Controllers
     public class ExtractAPIController : ApiController
     {
         IUrlRepository url = new UrlRepository();
-        [Route("api/fithcmus/news")]
+        [Route("api/fithcmus/getnews")]
 
         public async Task<IEnumerable<News>> GetNews()
         {
