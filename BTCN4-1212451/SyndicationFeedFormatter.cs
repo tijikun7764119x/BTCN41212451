@@ -94,13 +94,15 @@ namespace BTCN4_1212451
             
             //DateTime dt = DateTime.ParseExact(u.date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             DateTime dt = new DateTime(Int32.Parse(u.year), Int32.Parse(u.month), Int32.Parse(u.day));
-            var item = new SyndicationItem()
-            {
-                Title = new TextSyndicationContent(u.title),
-                Content = new TextSyndicationContent(u.title),
-                BaseUri = new Uri(u.href),
-                PublishDate = new DateTimeOffset(dt)
-            };
+            //var item = new SyndicationItem()
+            //{
+            //    Title = new TextSyndicationContent(u.title),
+            //    Content = new TextSyndicationContent(u.title),
+            //    //BaseUri = new Uri(u.href),
+            //    //Links = new SyndicationLink(new Uri(u.href)),
+            //    PublishDate = new DateTimeOffset(dt)
+            //};
+            var item = new SyndicationItem(u.title, u.title, new Uri(u.href), null, dt);
             item.Authors.Add(new SyndicationPerson() { Name = "FITHCMUS" });
             return item;
         }
